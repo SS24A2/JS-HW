@@ -73,7 +73,7 @@ function print(text){
     return text
 }
 function numCompare(num1,num2){
-    if (num1===num2){
+    if (typeof num1==="number" && typeof num2==="number" && num1===num2){
         console.log("These numbers are equal")
     } else if (typeof num1==="number" && typeof num2==="number" && num1!=num2){
         console.log("These numbers are not equal") 
@@ -166,12 +166,12 @@ if (temperature>30){
 //ZADACA 5
 
 function modulus (number){
-    if (number%3===0 && number%5!==0){
-        console.log("Fizz")
-    } else if (number%5===0 && number%3!==0){
-        console.log("Buzz")
-    } else if (number%5===0 && number%3===0){
+    if (number%5===0 && number%3===0){
         console.log("FizzBuzz")
+    } else if (number%5===0){
+        console.log("Buzz")
+    } else if (number%3===0){
+        console.log("Fizz")
     } else {
         console.log(number) 
     }
