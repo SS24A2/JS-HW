@@ -1,0 +1,25 @@
+<!--zadaca1-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List Manipulation</title>
+  </head>
+  <body>
+    <ul>
+      <li>Mercedes</li>
+      <li>BMW</li>
+      <li>Audi</li>
+    </ul>
+    <script>
+      const listItems = document.querySelectorAll("li")
+      const unordList = document.querySelector("ul")
+      listItems.forEach (item => item.style.cssText = "color:blue")
+      const newListItem = document.createElement('li')
+      unordList.appendChild(newListItem)
+      newListItem.textContent='Ferrari'
+    </script>
+  </body>
+</html>

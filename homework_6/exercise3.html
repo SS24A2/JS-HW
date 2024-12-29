@@ -1,0 +1,97 @@
+<!--zadaca3-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Quiz</title>
+  </head>
+  <body>
+    <div id="quiz-container">
+      <!-- Quiz content will be dynamically generated here -->
+    </div>
+
+    <script>
+        const quizData = [
+        {
+          question: "What is the capital of France?",
+          options: ["Berlin", "Madrid", "Paris", "Rome"],
+          correctAnswer: "Paris",
+        },
+        {
+          question: "Which planet is known as the Red Planet?",
+          options: ["Earth", "Mars", "Jupiter", "Venus"],
+          correctAnswer: "Mars",
+        },
+        {
+          question: "What is the largest mammal on Earth?",
+          options: ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
+          correctAnswer: "Blue Whale",
+        },
+        {
+          question: "In which year did the Titanic sink?",
+          options: ["1905", "1912", "1920", "1931"],
+          correctAnswer: "1912",
+        },
+        {
+          question: "Who wrote 'Romeo and Juliet'?",
+          options: [
+            "Charles Dickens",
+            "Jane Austen",
+            "William Shakespeare",
+            "Mark Twain",
+          ],
+          correctAnswer: "William Shakespeare",
+        },
+        ]
+        
+        const quizContainer = document.querySelector("#quiz-container")
+        const orderdedList = document.createElement('ol')
+        quizContainer.appendChild(orderdedList)
+        const title = document.createElement('h2')
+        quizContainer.insertBefore(title, orderdedList)
+        title.textContent='General Knowledge Quiz'
+        const submit = document.createElement('button')
+        quizContainer.appendChild(submit)
+        submit.textContent='Submit my Answers'
+        submit.setAttribute('type','submit')
+
+        const listItems = []
+        const optionsList = []
+        const inputs =[]
+        const labels =[]
+        const allOptions = quizData.map(item => item.options)
+        
+       
+        for (let i=0; i<5; i++){
+          const nameAttribute=['question1','question2','question3','question4','question5']
+          listItems[i] = document.createElement("li")
+          orderdedList.appendChild(listItems[i])
+          listItems[i].textContent=quizData[i].question
+          optionsList[i] = document.createElement("span") 
+          listItems[i].appendChild(optionsList[i])
+                             
+          for (let j=0; j<4; j++){
+            inputs[i] = document.createElement('input')
+            labels[i] = document.createElement('label')
+            optionsList[i].appendChild(inputs[i])
+            optionsList[i].appendChild(labels[i])
+            inputs[i].setAttribute('name', nameAttribute[i])
+            labels[i].textContent=allOptions[i][j]
+            inputs[i].setAttribute('id', allOptions[i][j])
+            labels[i].setAttribute('for', allOptions[i][j])
+            inputs[i].setAttribute('type','radio')
+            labels[i].style.cssText = "margin-right:10px; font-style:italic"
+          }
+          listItems[i].style.cssText = "font-weight:600"
+          optionsList[i].style.cssText = "font-weight:400; display:block"
+        }     
+
+        orderdedList.style.cssText = "line-height:2.3; list-style-position: inside; margin:0"
+        quizContainer.style.cssText = "max-width:600px; margin:50px auto; box-shadow: 3px 3px 17px 3px #bcb0bc; border-top-right-radius:30px; border-bottom-left-radius:30px; background-color: #eee1ff"
+        title.style.cssText = "padding-top:20px; color: darkviolet; text-align:center; margin-bottom:10px"
+        submit.style.cssText = "color: darkviolet; margin:10px auto; transform: translate(230px); font-size:16px; font-weight: 600; background-color: lavender; border: 1px solid grey"
+                    
+    </script>
+  </body>
+</html>
