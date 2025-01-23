@@ -1,0 +1,38 @@
+label {
+    font-size: 20px;
+    color: navy;
+    display: inline-block;
+    width: 200px;
+}
+
+ul {
+    border: 1px solid grey;
+    line-height: 2;
+    width: 500px;
+    background-color: lightcyan;
+}
+
+button {
+    padding: 10px;
+    background-color:  grey;
+    position: relative;
+    left:440px;
+    font-size: 20px;
+    color: white;
+}
+
+h1 {
+    position: relative;
+    left:170px;
+    color: navy;
+    text-decoration: underline;
+}
+
+input {
+    width: 200px;
+}
+
+body {
+    font-family:'Lucida Sans'
+}
+
