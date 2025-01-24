@@ -34,25 +34,45 @@
     </style>
   </head>
   <body>
-    <div class="traffic-light">
+    <div class="traffic-light" tabindex="-1">
       <div class="light"></div>
       <div class="light"></div>
       <div class="light"></div>
     </div>
 
     <script>
-      document.body.addEventListener('keydown', (e)=>{
-        if (e.key==='r'){
-          const firstLight=document.getElementsByClassName("light")[0]
-          firstLight.style.backgroundColor='red'
-        } else if (e.key==='o'){
-          const secondLight=document.getElementsByClassName("light")[1]
-          secondLight.style.backgroundColor='orange'
-        } else if (e.key==='g'){
-          const thirdLight=document.getElementsByClassName("light")[2]
-          thirdLight.style.backgroundColor='green'
-        }
-      })
+      //Solution 1 - removed background-color
+      document.body.addEventListener('keydown', (e) => {
+          if (['r', 'o', 'g'].includes(e.key)) {  //ova e za da ne se gasi svetloto koga ke se klikne dr.bukva (pr.k, p, t ...)
+            for (let light of document.getElementsByClassName("light")) {
+              light.style.backgroundColor = ''
+            }
+          }
+
+          if (e.key === 'r') {
+            document.getElementsByClassName("light")[0].style.backgroundColor = 'red'
+          } else if (e.key === 'o') {
+            document.getElementsByClassName("light")[1].style.backgroundColor = 'orange'
+          } else if (e.key === 'g') {
+            document.getElementsByClassName("light")[2].style.backgroundColor = 'green'
+          }
+        })    
+
+      //Solution 2 - recreated inner HTML
+      // document.body.addEventListener('keydown', (e) => {
+      //     if (['r', 'o', 'g'].includes(e.key)) {
+      //       document.getElementsByClassName("traffic-light")[0].innerHTML = ''
+      //       document.getElementsByClassName("traffic-light")[0].innerHTML =
+      //       '<div class="light"></div><div class="light"></div><div class="light"></div>'
+      //     }
+      //     if (e.key === 'r') {
+      //       document.getElementsByClassName("light")[0].style.backgroundColor = 'red'
+      //     } else if (e.key === 'o') {
+      //       document.getElementsByClassName("light")[1].style.backgroundColor = 'orange'
+      //     } else if (e.key === 'g') {
+      //       document.getElementsByClassName("light")[2].style.backgroundColor = 'green'
+      //     }
+      //   })
     </script>
   </body>
 </html>
