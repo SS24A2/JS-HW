@@ -1,9 +1,8 @@
-const cards = document.getElementById('cards')
-
 async function displayData() {
     try {
         const response = await fetch('https://rickandmortyapi.com/api/character')
         const data = await response.json()
+        const cards = document.getElementById('cards')
         data.results.forEach((character) => {
             const card=document.createElement('div')
             card.classList.add('card')
