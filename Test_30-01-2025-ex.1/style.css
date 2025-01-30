@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    background-color: #222020;
+}
+
+.container {
+    max-width: 500px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 100px;
+}
+
+.div1 {
+    background-image: url("bg.jpg");
+    background-size: 500px 300px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.inner-div1 img {
+    width: 15px;
+    height: 15px;
+}
+
+
+.div2 {
+    flex-basis: 20%;
+    background-color: white;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.div2 img {
+    width: 30px;
+    height: 30px;
+    border-radius:50%;
+    border:1px solid white;
+}
+
+.div1>span {
+    padding: 5px 15px;
+    background-color: white;
+    height: 25px;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    border-radius: 5px;
+    color: #4CD964;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.inner-div1 {
+    padding: 5px 15px;
+    background-color: white;
+    height: 25px;
+    position: relative;
+    top: 10px;
+    right: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-div1 span {
+    position: relative;
+    padding-left: 6px;
+}
+
+.span1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #3E3F68; 
+    padding-right: 10px;
+}
+
+.p1 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #8A98BA
+}
+
+.span2 {
+    font-size: 10px;
+    font-weight: 400;
+    color: white;
+    padding: 3px 12px;
+    background-image: linear-gradient(#FF5673, #FF8C48);
+    border-radius: 10px;
+    margin-right: 4px;
+}
+
+.span3 {
+    font-size: 10px;
+    font-weight: 400;
+    color: white;
+    padding: 3px 10px;
+    background-color: #848DFF;
+    border-radius: 10px;
+    margin-right: 50px;
+}
+
+.img1 {
+    position: relative;
+    right:-14px;
+}
+
+.img2 {
+    position: relative;
+    right:-4px;
+}
+
+.img3 {
+    position: relative;
+    right:6px;
+}
+
+.img4 {
+    position: relative;
+    right:16px;
+}
